@@ -1,11 +1,12 @@
 class Restaurant < ApplicationRecord
-  STRONG_PARAMS = %i[
-    name
-    address
+  STRONG_PARAMS = [
+    :name,
+    :address,
+    tag_ids: []
   ]
 
-  has_many :reviews
-  has_many :restaurant_tags
+  has_many :reviews, dependent: :destroy
+  has_many :restaurant_tags, dependent: :destroy
   has_many :tags, through: :restaurant_tags
 
 end
