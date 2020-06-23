@@ -31,7 +31,9 @@ In the new.html.erb
 ```erb
   <%= f.association :tags, multiple: true, as: :check_boxes %>
   <%# f.association :tags, as: :radio_buttons %>
-  <%# f.association :tags, multiple: true, include_blank: false %>
+  <%# f.association :tags, multiple: true, include_hidden: false %>
+  <!-- The below one would require a change in the controller as well -->
+  <%# f.input :tags, collection: Tag.all, input_html: { multiple: true }, include_hidden: false %>
 ```
 
 ### 3. Refactoring
