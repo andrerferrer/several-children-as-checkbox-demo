@@ -16,7 +16,7 @@ Let's go to the controller.
 
 ### 1. In the controller
 
-Truth be told, we only need to allow some extra `strong params` - the Tags - so, we can add them:
+Truth be told, we only need to allow some extra `strong params` here. So, we can add them:
 ```ruby
   def strong_params
     params.require(:restaurant).permit(:name, :address, tag_ids: [])
@@ -25,15 +25,12 @@ Truth be told, we only need to allow some extra `strong params` - the Tags - so,
 
 ### 2. The View
 
-Add one of the `association`s to your `simple_form_for`
+Add one the `association` to your `simple_form_for`
 
-In the new.html.erb
+In the `app/views/restaurants/new.html.erb`:
+
 ```erb
   <%= f.association :tags, multiple: true, as: :check_boxes %>
-  <%# f.association :tags, as: :radio_buttons %>
-  <%# f.association :tags, multiple: true, include_hidden: false %>
-  <!-- The below one would require a change in the controller as well -->
-  <%# f.input :tags, collection: Tag.all, input_html: { multiple: true }, include_hidden: false %>
 ```
 
 ### 3. Refactoring
