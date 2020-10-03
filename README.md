@@ -1,6 +1,6 @@
 # GOAL
 
-This is a demo to show-case how to create models with tags in a rails app.
+This is a demo to show-case how to create a form for a model with checkboxes for another associated model in a rails app.
 
 It was created from [this repo](https://github.com/andrerferrer/filter-by-tags-demo).
 
